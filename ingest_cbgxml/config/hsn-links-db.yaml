@@ -1,0 +1,13 @@
+# YAML configuration file to access the hsn & links dbs
+
+# links db
+HOST_LINKS    : localhost
+USER_LINKS    : links
+PASSWD_LINKS  : mslinks
+DBNAME_LINKS  : links_cleaned
+
+# reference db
+HOST_REF   : localhost
+USER_REF   : links
+PASSWD_REF : mslinks
+DBNAME_REF : links_general

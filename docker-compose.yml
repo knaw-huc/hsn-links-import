@@ -1,0 +1,17 @@
+version: '2'
+services: 
+
+    # python  script: conversion of xmlfiles
+    ingester:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        environment: 
+            LINKS_HOME: './ingest_cbgxml'         
+        ports:
+            - 8888:5000
+        volumes:
+            - ./:/usr/src/app            
+    
+volumes:
+    mysqldb:       
