@@ -27,6 +27,8 @@ import os
 import sys
 import tablib
 import yaml
+# import MySQLdb
+
 
 from time import time
 
@@ -256,6 +258,6 @@ if __name__ == "__main__":
 	print( "Connecting to database at %s" % HOST_REF )
 	db_ref = Database( host = HOST_REF,   user = USER_REF,   passwd = PASSWD_REF,   dbname = DBNAME_REF )
 	
-	process_xml( db_ref, HOST_LINKS, USER_LINKS, PASSWD_LINKS, A2APERL_DIR, CBGXML_DIR, CBGXML_LIST, CBGXML_SKIP )
+	# process_xml( db_ref, HOST_LINKS, USER_LINKS, PASSWD_LINKS, A2APERL_DIR, CBGXML_DIR, CBGXML_LIST, CBGXML_SKIP )
 
 # [eof]

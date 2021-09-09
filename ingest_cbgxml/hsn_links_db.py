@@ -18,7 +18,7 @@ from builtins import ( ascii, bytes, chr, dict, filter, hex, input, int, map, ne
 	oct, open, pow, range, round, str, super, zip )
 
 import sys
-
+# print('yep')
 import MySQLdb
 
 debug = False
