@@ -1,18 +1,20 @@
 # YAML configuration file for mk_ingest_cbgxml.py
 
 # REQUIRED: YAML main for db access
-YAML_MAIN : "/data/links/python/hsn-links-db.yaml"
+# YAML_MAIN : "/data/links/python/hsn-links-db.yaml"
+YAML_MAIN : "/Users/mvdpeet/dockerprojecten/hsn-links-import/ingest_cbgxml/hsn-links-db.yaml"
+
 
 # REQUIRED
 # Directory containing the import_a2a_auto.pl Perl script
-A2APERL_DIR : /data/links/ingest/cbg_a2a
+A2APERL_DIR : /Users/mvdpeet/dockerprojecten/hsn-links-import/ingest_cbgxml/
 
 # REQUIRED
 # Directories containing the CBG XML files
-CBGXML_BSG_DIR : /data/links/ingest/cbg_a2a/xml/CBG-2021/BSG-2021/BSG2021-unpacked
-CBGXML_BSH_DIR : /data/links/ingest/cbg_a2a/xml/CBG-2021/BSH-2021/BSH2021-unpacked
-CBGXML_BSE_DIR : /data/links/ingest/cbg_a2a/xml/CBG-2021/BSE-2021/BSE2021-unpacked
-CBGXML_BSO_DIR : /data/links/ingest/cbg_a2a/xml/CBG-2021/BSO-2021/BSO2021-unpacked
+CBGXML_BSG_DIR : /Users/mvdpeet/dockerprojecten/hsn-links-import/import/source/BSG-2021
+CBGXML_BSH_DIR : /Users/mvdpeet/dockerprojecten/hsn-links-import/import/source/BSH-2021
+# CBGXML_BSE_DIR : /data/links/ingest/cbg_a2a/xml/CBG-2021/BSE-2021/BSE2021-unpacked
+CBGXML_BSO_DIR : /Users/mvdpeet/dockerprojecten/hsn-links-import/import/source/BSO-2021
 
 # OPTIONAL
 # Explicit enumeration of the wanted files by XML filename

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 """
@@ -158,10 +158,13 @@ def process_xml( db_ref, host_links, user_links, passwd_links, a2aperl_dir, cbgx
 def get_yaml_config( yaml_filename ):
 	config = {}
 	print( "Trying to load the yaml config file: %s" % yaml_filename )
-	
+
+
 	if yaml_filename.startswith( "./" ):	# look in startup directory
+
 		yaml_filename = yaml_filename[ 2: ]
 		config_path = os.path.join( sys.path[ 0 ], yaml_filename )
+
 	
 	else:
 		try:
@@ -177,7 +180,7 @@ def get_yaml_config( yaml_filename ):
 		config_path = os.path.join( LINKS_HOME, yaml_filename )
 	
 	print( "yaml config path: %s" % config_path )
-	
+	# print( "LINKS_HOME: %s" % LINKS_HOME )
 	try:
 		config_file = open( config_path )
 		config = yaml.safe_load( config_file )
@@ -194,15 +197,15 @@ def get_yaml_config( yaml_filename ):
 
 if __name__ == "__main__":
 	if debug: print( "mk_ingest_cbgxml.py" )
-	print("hallo Maarten")
 	
 	time0 = time()		# seconds since the epoch
 	
-	yaml_filename = "config/mk_ingest_cbgxml.yaml"
+	yaml_filename = "./mk_ingest_cbgxml.yaml"
 	config_local = get_yaml_config( yaml_filename )
 	
 	YAML_MAIN   = config_local.get( "YAML_MAIN" )
 	config_main = get_yaml_config( YAML_MAIN )
+	# print(config_main)
 	
 	A2APERL_DIR = config_local.get( "A2APERL_DIR", "./" )
 	print( "A2APERL_DIR: %s" % A2APERL_DIR )
