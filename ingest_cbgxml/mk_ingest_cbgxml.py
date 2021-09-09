@@ -207,12 +207,12 @@ if __name__ == "__main__":
 	
 	YAML_MAIN   = config_local.get( "YAML_MAIN" )
 	config_main = get_yaml_config( YAML_MAIN )
-	# print(config_main)
+	print('config_local', config_local)
 	
 	A2APERL_DIR = config_local.get( "A2APERL_DIR", "./" )
 	print( "A2APERL_DIR: %s" % A2APERL_DIR )
 	
-	CBGXML_COLLECTION = config_local.get( "CBGXML_COLLECTION", "" )
+	CBGXML_COLLECTION = config_local.get( "CBGXML_COLLECTION", "BSG" ) # only the BSG files, in import/source/BSG-2021, default was ./ 
 	print( "CBGXML_COLLECTION: %s" % CBGXML_COLLECTION )
 	
 	CBGXML_DIR_  = "CBGXML_%s_DIR"  % CBGXML_COLLECTION
@@ -223,7 +223,7 @@ if __name__ == "__main__":
 	#print( "CBGXML_LIST_: %s" % CBGXML_LIST_ )
 	#print( "CBGXML_SKIP_: %s" % CBGXML_SKIP_ )
 	
-	CBGXML_DIR  = config_local.get( CBGXML_DIR_, "./" )
+	CBGXML_DIR  = config_local.get( CBGXML_DIR_, "./" ) # this will be filled
 	CBGXML_LIST = config_local.get( CBGXML_LIST_, [] )
 	CBGXML_SKIP = config_local.get( CBGXML_SKIP_, [] )
 	
@@ -258,6 +258,6 @@ if __name__ == "__main__":
 	print( "Connecting to database at %s" % HOST_REF )
 	db_ref = Database( host = HOST_REF,   user = USER_REF,   passwd = PASSWD_REF,   dbname = DBNAME_REF )
 	
-	# process_xml( db_ref, HOST_LINKS, USER_LINKS, PASSWD_LINKS, A2APERL_DIR, CBGXML_DIR, CBGXML_LIST, CBGXML_SKIP )
+	process_xml( db_ref, HOST_LINKS, USER_LINKS, PASSWD_LINKS, A2APERL_DIR, CBGXML_DIR, CBGXML_LIST, CBGXML_SKIP )
 
 # [eof]

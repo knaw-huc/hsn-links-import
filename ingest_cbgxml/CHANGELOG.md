@@ -22,7 +22,18 @@ docker exec -i c9 mysql -uroot -prood  -e "create database links_original"
     - checked grants within mysql
     - 
 - Solved: you NEED to use 127.0.0.1 from Python... No DNS resolve, like PHP
+- 
+Problems? Discuss
+- Explicitly directory name like BSG is required for parsing. 
+- Explicite adding confirmation prompt is necessary, 
 
+- .sh files are created!
+- TODO, the tables should be created, it's not automatically
+- 
+```
+MySQLdb._exceptions.ProgrammingError: (1146, "Table 'links_general.ref_source' doesn't exist")
+
+```
 
 ## 8-9-2021
 

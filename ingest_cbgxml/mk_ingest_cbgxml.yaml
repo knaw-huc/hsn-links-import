@@ -26,19 +26,19 @@ CBGXML_BSO_LIST : []
 
 # OPTIONAL
 # Explicit enumeration of the UNwanted files by XML filename
-CBGXML_BSG_SKIP : [
-    A2A_BSG_2021-04_Gemeentearchief Ede.xml,
-    A2A_BSG_2021-04_Gemeentearchief Venray.xml,
-    A2A_BSG_2021-04_Westfries Archief.xml
-]
-CBGXML_BSH_SKIP : [
-    A2A_BSH_2021-04_Gemeentearchief Ede.xml,
-    A2A_BSH_2021-04_Gemeentearchief Venray.xml,
-    A2A_BSH_2021-04_Westfries Archief.xml
-]
-CBGXML_BSE_SKIP : []
-CBGXML_BSO_SKIP : [
-    A2A_BSO_2021-04_Gemeentearchief Ede.xml,
-    A2A_BSO_2021-04_Gemeentearchief Venray.xml,
-    A2A_BSO_2021-04_Westfries Archief.xml
-]
+# CBGXML_BSG_SKIP : [
+#     A2A_BSG_2021-04_Gemeentearchief Ede.xml,
+#     A2A_BSG_2021-04_Gemeentearchief Venray.xml,
+#     A2A_BSG_2021-04_Westfries Archief.xml
+# ]
+# CBGXML_BSH_SKIP : [
+#     A2A_BSH_2021-04_Gemeentearchief Ede.xml,
+#     A2A_BSH_2021-04_Gemeentearchief Venray.xml,
+#     A2A_BSH_2021-04_Westfries Archief.xml
+# ]
+# CBGXML_BSE_SKIP : []
+# CBGXML_BSO_SKIP : [
+#     A2A_BSO_2021-04_Gemeentearchief Ede.xml,
+#     A2A_BSO_2021-04_Gemeentearchief Venray.xml,
+#     A2A_BSO_2021-04_Westfries Archief.xml
+# ]
