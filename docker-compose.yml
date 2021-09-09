@@ -13,16 +13,17 @@ services:
         volumes:
             - ./:/usr/src/app
 
-    mariadb:
-        image: mariadb:5.5
+    mysql:
+        image: mysql:5.7
         volumes: 
-            - mariavol:/var/lib/mysql
+            - mysqlvol:/var/lib/mysql
         ports:
             - 3306:3306            
         environment:
             TZ: "Europe/Amsterdam"
             MYSQL_ROOT_PASSWORD: "rood"
-            MYSQL_DATABASE: "links"
+
+            MYSQL_DATABASE: "links_general"
       
 volumes:
-  mariavol:                      
+  mysqlvol:                      

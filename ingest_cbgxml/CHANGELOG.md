@@ -27,13 +27,17 @@ Problems? Discuss
 - Explicitly directory name like BSG is required for parsing. 
 - Explicite adding confirmation prompt is necessary, 
 
-- .sh files are created!
+- .sh files are created, it has something to do with this: vvv
 - TODO, the tables should be created, it's not automatically
-- 
+
 ```
 MySQLdb._exceptions.ProgrammingError: (1146, "Table 'links_general.ref_source' doesn't exist")
 
 ```
+
+- changed docker-compose to pure mysql (is used for the database in production)
+- and in 'pure' mysql (5.7. is used here) also `mysql -h127.0.0.1 -p3306 -uroot -p`  localhost is not used (socket)
+
 
 ## 8-9-2021
 
