@@ -4,14 +4,25 @@ services:
     # python  script: conversion of xmlfiles
     ingester:
         build:
-            context: .
+            context: ./ingest_cbgxml
             dockerfile: Dockerfile
         environment: 
             LINKS_HOME: './ingest_cbgxml'         
         ports:
             - 8888:5000
         volumes:
-            - ./:/usr/src/app            
-    
+            - ./:/usr/src/app
+
+    mariadb:
+        image: mariadb:5.5
+        volumes: 
+            - mariavol:/var/lib/mysql
+        ports:
+            - 3306:3306            
+        environment:
+            TZ: "Europe/Amsterdam"
+            MYSQL_ROOT_PASSWORD: "rood"
+            MYSQL_DATABASE: "links"
+      
 volumes:
-    mysqldb:       
+  mariavol:                      

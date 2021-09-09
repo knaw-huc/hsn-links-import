@@ -30,6 +30,7 @@ class Database:
 		self.user   = user
 		self.passwd = passwd
 		self.dbname = dbname
+		print(self)
 
 		self.connection = MySQLdb.connect( \
 			host = self.host, 
