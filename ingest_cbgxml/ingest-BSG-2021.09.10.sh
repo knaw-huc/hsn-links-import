@@ -11,3 +11,9 @@
 
 date "+%F %T"
 
+perl /Users/mvdpeet/dockerprojecten/hsn-links-import/ingest_cbgxml/import_a2a_auto.pl "/Users/mvdpeet/dockerprojecten/hsn-links-import/import/source/BSG-2021/A2A_BSG_2021-04_NA#Gemeentearchief Oegstgeest.xml" 127.0.0.1 231 1 1 root rood
+perl /Users/mvdpeet/dockerprojecten/hsn-links-import/ingest_cbgxml/import_a2a_auto.pl "/Users/mvdpeet/dockerprojecten/hsn-links-import/import/source/BSG-2021/A2A_BSG_2021-04_NA#Gemeentearchief Wassenaar.xml" 127.0.0.1 242 1 0 root rood
+
+date "+%F %T"
+
+# [eof]

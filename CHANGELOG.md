@@ -3,7 +3,9 @@
 
 ## 2021-09-10
 
-- created help table, for conversion
+- created mysql help table, for conversion
+- perl with cpan modules in Dockerfile, lot of searching and trial and error
+- shell script with calls with right parameters to perlscript are now generated
 
 ## 2021-09-9
 

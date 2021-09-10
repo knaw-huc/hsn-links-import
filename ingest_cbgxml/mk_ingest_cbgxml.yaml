@@ -7,7 +7,7 @@ YAML_MAIN : "/Users/mvdpeet/dockerprojecten/hsn-links-import/ingest_cbgxml/hsn-l
 
 # REQUIRED
 # Directory containing the import_a2a_auto.pl Perl script
-A2APERL_DIR : /Users/mvdpeet/dockerprojecten/hsn-links-import/ingest_cbgxml/
+A2APERL_DIR : /Users/mvdpeet/dockerprojecten/hsn-links-import/ingest_cbgxml
 
 # REQUIRED
 # Directories containing the CBG XML files
