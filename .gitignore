@@ -10,7 +10,6 @@ log
 docker-compose-dev.yml
 storage*
 inspect*
-*.sql
 *.csv
 compile
 cache

@@ -207,6 +207,8 @@ if __name__ == "__main__":
 	
 	YAML_MAIN   = config_local.get( "YAML_MAIN" )
 	config_main = get_yaml_config( YAML_MAIN )
+	print('config_main', config_main)
+
 	print('config_local', config_local)
 	
 	A2APERL_DIR = config_local.get( "A2APERL_DIR", "./" )

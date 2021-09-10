@@ -1,6 +1,11 @@
 # LOG
 
-## 9-9-2021
+
+## 2021-09-10
+
+- created help table, for conversion
+
+## 2021-09-9
 
 - walking through the ingest.py file
 - added more dependencies to requirements
@@ -11,10 +16,6 @@
 MySQL via Docker, up in the air
 - port mapping is essential, it's not a default if you leave it out
 
-```
-docker exec -i c9 mysql -uroot -prood  -e "create database links_general"
-docker exec -i c9 mysql -uroot -prood  -e "create database links_original"
-```
 
 - mysql -uroot -prood --port=8001 -hlocalhost --protocol=tcp # it worked
 - connection from python did'nt work =>> troubleshooting with testdbconnection.py
@@ -39,7 +40,7 @@ MySQLdb._exceptions.ProgrammingError: (1146, "Table 'links_general.ref_source' d
 - and in 'pure' mysql (5.7. is used here) also `mysql -h127.0.0.1 -p3306 -uroot -p`  localhost is not used (socket)
 
 
-## 8-9-2021
+## 2021-09-8
 
 - setup for Docker
 - tested it, it works
