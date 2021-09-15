@@ -4,10 +4,44 @@ Docker version of ingester of HSN.
 
 Status: in development
 
-## development
+## Docker development
 
-Start Virtual Environment (cre)
-`source hsn-links-import/bin/activate`
+<!-- Start Virtual Environment (cre)
+`source hsn-links-import/bin/activate` -->
+
+### Via docker-compose 
+
+first time:
+```
+docker-compose build --no-cache ingester
+```
+
+later:
+```
+docker-compose build ingester
+docker-compose up -d
+# bind mount ./  network created by docker-compose `docker network ls`
+docker run -v $(pwd):/usr/src/app/--network hsn-links-import_default -it hsn-links-import_ingester  bash
+# run python script
+./mk_ingest_cbgxml.py
+mysql -uroot -prood -hmysqldb
+```
+
+### Separate Dockerfiles
+
+```
+cd ingest_cbgxml
+docker build  -t hsn_ingester .
+
+docker run -v $(pwd):/usr/src/app/ --network hsn-links-import_default -it hsn-links-import_ingester  bash
+# in the container
+# connect to db
+mysql -uroot -prood -hmysqldb 
+
+# run python script
+./mk_ingest_cbgxml.py
+
+```
 
 
 ## Setup (only once):
@@ -36,6 +70,11 @@ pip freeze > requirements.txt # for docker
 
 
 ## up & running after dockerization
+
+
+
+
+
 
 ```
 docker-compose build  ingester

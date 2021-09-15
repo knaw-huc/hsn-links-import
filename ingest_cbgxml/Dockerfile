@@ -33,7 +33,6 @@ RUN apt-get install -y libxml-parser-perl
 RUN cpanm XML::Simple
 # https://stackoverflow.com/questions/9693031/how-to-install-xmlparser-without-expat-devel
 
-COPY requirements.txt requirements.txt
 
 # COPY mk_ingest_cbgxml.py mk_ingest_cbgxml.py
 # COPY import_a2a_auto.pl import_a2a_auto.pl 
@@ -41,6 +40,17 @@ COPY requirements.txt requirements.txt
 # COPY mk_ingest_cbgxml.yaml mk_ingest_cbgxml.yaml 
 # COPY hsn-links-db.yaml hsn-links-db.yaml
 
+# mysqlclient
+RUN apt update && \
+    apt install gettext-base default-mysql-client -y && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists/*
+
+
+COPY requirements.txt requirements.txt
+
 RUN pip install -r requirements.txt
 
-CMD ["python3", "mk_ingest_cbgxml.py"]
+# CMD ["python3", "mk_ingest_cbgxml.py"]
+CMD ["bash"]
+

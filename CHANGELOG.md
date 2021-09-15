@@ -1,5 +1,10 @@
 # LOG
 
+## 2021-09-15
+
+- ignore running from the host, run the scripts from within container
+- added mysql client for testing
+
 
 ## 2021-09-10
 
