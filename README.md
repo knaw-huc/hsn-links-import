@@ -21,7 +21,7 @@ later:
 docker-compose build ingester
 docker-compose up -d
 # bind mount ./  network created by docker-compose `docker network ls`
-docker run -v $(pwd):/usr/src/app/--network hsn-links-import_default -it hsn-links-import_ingester  bash
+docker run -v $(pwd):/usr/src/app/ --network hsn-links-import_default -it hsn-links-import_ingester  bash
 # run python script
 ./mk_ingest_cbgxml.py
 mysql -uroot -prood -hmysqldb
@@ -61,11 +61,14 @@ python3 -m pip install mysql-connector-python
 pip freeze > requirements.txt # for docker
 ```
 
-### Create database helper
 
-`docker exec -i <dockerid> mysql -uroot -prood  -e "create database links_general"`
 
-`docker exec -i <dockerid> mysql -uroot -prood -Dlinks_general < ref_source.sql`
+Example:
+```
+docker exec -i hsn-links-import_mysqldb_1  mysql -uroot -prood  -e "create database links_general"
+docker exec -i hsn-links-import_mysqldb_1  mysql -uroot -prood  -e "create database links_a2a"
+docker exec -i hsn-links-import_mysqldb_1  mysql -uroot -prood -Dlinks_general < ref_source.sql
+```
 
 
 

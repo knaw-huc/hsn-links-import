@@ -11,10 +11,10 @@ services:
         ports:
             - 8888:5000
         volumes:
-            - ./:/usr/src/app
+            - ./:/usr/src/app        
 
     mysqldb:
-        image: mysql:5.7
+        image: mysql:5.7.35
         volumes: 
             - mysqlvol:/var/lib/mysql
         ports:
@@ -22,8 +22,7 @@ services:
         environment:
             TZ: "Europe/Amsterdam"
             MYSQL_ROOT_PASSWORD: "rood"
-
             MYSQL_DATABASE: "links_general"
       
 volumes:
-  mysqlvol:                      
+    mysqlvol:                      

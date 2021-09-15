@@ -40,7 +40,7 @@ RUN cpanm XML::Simple
 # COPY mk_ingest_cbgxml.yaml mk_ingest_cbgxml.yaml 
 # COPY hsn-links-db.yaml hsn-links-db.yaml
 
-# mysqlclient
+# mysqlclient for checking
 RUN apt update && \
     apt install gettext-base default-mysql-client -y && \
     apt clean && \
@@ -51,6 +51,6 @@ COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
 
-# CMD ["python3", "mk_ingest_cbgxml.py"]
-CMD ["bash"]
+CMD ["python3", "mk_ingest_cbgxml.py"]
+# CMD ["bash"]
 

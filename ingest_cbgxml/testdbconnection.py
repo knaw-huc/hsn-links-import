@@ -17,6 +17,8 @@ import MySQLdb
 
 hhost = 'localhost'
 hhost = '127.0.0.1'
+hhost = 'mysqldb' # docker-compose name for this service
+
 
 db = MySQLdb.connect(host = hhost, user = 'root', passwd = 'rood')
 

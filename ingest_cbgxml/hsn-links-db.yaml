@@ -15,7 +15,7 @@
 
 
 # links db docker
-HOST_LINKS    : 127.0.0.1
+HOST_LINKS    : mysqldb
 USER_LINKS    : root
 PASSWD_LINKS  : rood
 DBNAME_LINKS  : links_cleaned
@@ -24,7 +24,7 @@ DBNAME_LINKS  : links_cleaned
 
 
 # reference db docker
-HOST_REF   : 127.0.0.1
+HOST_REF   : mysqldb
 USER_REF   : root
 PASSWD_REF : rood
 DBNAME_REF : links_general

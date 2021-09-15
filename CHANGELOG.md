@@ -2,8 +2,18 @@
 
 ## 2021-09-15
 
+TODO
+- remove the ask for input thing
+- pipeline from output result (filled database)
+- 
+
+
+- ingest seems to work in principle...no pipeline yet. 
+- added a create database (only development?)
 - ignore running from the host, run the scripts from within container
 - added mysql client for testing
+- https://stackoverflow.com/questions/43102442/whats-the-difference-between-mysqldb-mysqlclient-and-mysql-connector-python
+- removed mysql-connector and replaced it with mysqlclient
 
 
 ## 2021-09-10
