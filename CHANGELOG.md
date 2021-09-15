@@ -2,10 +2,13 @@
 
 ## 2021-09-15
 
+- a2a_to_original.yaml does not exist en a2a_to_original.py asks for it
+- it looks identical I think to hsn_links
+
 TODO
 - remove the ask for input thing
 - pipeline from output result (filled database)
-- 
+- python mk_ingest_cbgxml.py; sh ingest-BSG-dateoftoday.sh
 
 
 - ingest seems to work in principle...no pipeline yet. 
