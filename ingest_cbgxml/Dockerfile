@@ -51,6 +51,11 @@ COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
 
-CMD ["python3", "mk_ingest_cbgxml.py"]
+# CMD ["python3", "mk_ingest_cbgxml.py"]
 # CMD ["bash"]
+
+# only for development
+# https://stackoverflow.com/questions/25775266/how-to-keep-docker-container-running-after-starting-services
+
+ENTRYPOINT ["tail", "-f", "/dev/null"]
 

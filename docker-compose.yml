@@ -7,11 +7,12 @@ services:
             context: ./ingest_cbgxml
             dockerfile: Dockerfile
         environment: 
-            LINKS_HOME: './ingest_cbgxml'         
+            LINKS_HOME: './ingest_cbgxml'
+            COLLECTION: 'BSH' # possible values BSO, BSH
         ports:
             - 8888:5000
         volumes:
-            - ./:/usr/src/app        
+            - ./ingest_cbgxml/:/usr/src/app        
 
     mysqldb:
         image: mysql:5.7.35

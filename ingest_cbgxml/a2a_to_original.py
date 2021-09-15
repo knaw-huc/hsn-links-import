@@ -50,6 +50,9 @@ def db_check( db ):
 	tables = [ "a2a", "event", "object", "person", "person_o_temp", "person_profession", 
 			  "registration_o_temp", "relation", "remark", "source", "source_sourceavailablescans_scan" ]
 
+	# tables = [ "a2a", "event", "object", "person",  "person_profession", 
+	# 		   "relation", "remark", "source", "source_sourceavailablescans_scan" ]			  
+
 	print( "table row counts:" )
 	for table in tables:
 		query = """SELECT COUNT(*) FROM %s""" % table
@@ -312,7 +315,7 @@ if __name__ == "__main__":
 	db_links = Database( host = HOST_LINKS, user = USER_LINKS, passwd = PASSWD_LINKS, dbname = DBNAME_LINKS )
 
 	db_check( db_links )
-
+	print('check')
 	rmtypes = sources_from_a2a( db_links, log )
 	delete_from_orig( db_links, log, rmtypes )
 

@@ -67,6 +67,7 @@ Example:
 ```
 docker exec -i hsn-links-import_mysqldb_1  mysql -uroot -prood  -e "create database links_general"
 docker exec -i hsn-links-import_mysqldb_1  mysql -uroot -prood  -e "create database links_a2a"
+docker exec -i hsn-links-import_mysqldb_1  mysql -uroot -prood  -e "create database links_cleaned"
 docker exec -i hsn-links-import_mysqldb_1  mysql -uroot -prood -Dlinks_general < ref_source.sql
 ```
 

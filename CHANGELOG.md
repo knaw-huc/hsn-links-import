@@ -1,9 +1,21 @@
 # LOG
 
 ## 2021-09-15
+TODO BUGS
+- MySQLdb._exceptions.ProgrammingError: (1146, "Table 'links_a2a.registration_o_temp' doesn't exist")
+- MySQLdb._exceptions.ProgrammingError: (1146, "Table 'links_a2a.person_o_temp' doesn't exist")
+- temp tables for person and registration are missing in links_a2a
+
+These should have been build with the perl script.
+
+In the perlscript:
+
+`The 2 remaining tables (person_o_temp and registration_o_temp) are not used by this script, ` ln 138
+
+
 
 - a2a_to_original.yaml does not exist en a2a_to_original.py asks for it
-- it looks identical I think to hsn_links
+- added a a2a_to_original.yaml
 
 TODO
 - remove the ask for input thing

@@ -46,6 +46,7 @@ def process_xml( db_ref, host_links, user_links, passwd_links, a2aperl_dir, cbgx
 	ghoe_type = ""
 	
 	if not cbgxml_list:
+		print('no list')
 		yaml_skip = 0
 		dir_list = os.listdir( cbgxml_dir )
 		dir_list.sort()
@@ -66,7 +67,9 @@ def process_xml( db_ref, host_links, user_links, passwd_links, a2aperl_dir, cbgx
 		yn = input( "No XML files specified by the cbgxml_list \nAdd all %d eligible xml files from the cbgxml_dir? [y,N] "  % len( cbgxml_list ) )
 		if yn.lower() == 'y':
 			add_all = True
-	
+	else:
+		print('yes list')
+
 	subdir = os.path.basename(  cbgxml_dir )
 	#timestamp = arrow.now().format( "YYYY.MM.DD-HH:mm" )
 	timestamp = arrow.now().format( "YYYY.MM.DD" )
@@ -211,10 +214,15 @@ if __name__ == "__main__":
 
 	print('config_local', config_local)
 	
-	A2APERL_DIR = config_local.get( "A2APERL_DIR", "./" )
+	A2APERL_DIR = config_local.get( "A2APERL_DIR", "." )
 	print( "A2APERL_DIR: %s" % A2APERL_DIR )
 	
-	CBGXML_COLLECTION = config_local.get( "CBGXML_COLLECTION", "BSG" ) # only the BSG files, in import/source/BSG-2021, default was ./ 
+	# CBGXML_COLLECTION = config_local.get( "CBGXML_COLLECTION", "BSG" ) # only the BSG files, in import/source/BSG-2021, default was ""
+	# CBGXML_COLLECTION = config_local.get( "CBGXML_COLLECTION", "BSH" ) # only the BSG files, in import/source/BSG-2021, default was ""
+	# CBGXML_COLLECTION = config_local.get( "CBGXML_COLLECTION", "BSO" ) # only the BSG files, in import/source/BSG-2021, default was ""
+	CBGXML_COLLECTION = config_local.get( "CBGXML_COLLECTION", os.environ["COLLECTION"]) # only the BSG files, in import/source/BSG-2021, default was ""
+
+
 	print( "CBGXML_COLLECTION: %s" % CBGXML_COLLECTION )
 	
 	CBGXML_DIR_  = "CBGXML_%s_DIR"  % CBGXML_COLLECTION

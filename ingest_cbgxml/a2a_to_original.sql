@@ -19,10 +19,12 @@
 -- 24-Jan-2021 patronyme => patronym
 -- 30-Apr-2021 also copy A2A source.sourcedigitaloriginal
 
+
+/* CREATE TABLE if not exists links_a2a.registration_o_temp ; */
 TRUNCATE TABLE links_a2a.registration_o_temp ;
 
 --
-
+/* CREATE TABLE if not exists links_a2a.person_o_temp ; */
 TRUNCATE TABLE links_a2a.person_o_temp ;
 
 --

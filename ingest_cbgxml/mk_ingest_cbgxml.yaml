@@ -19,10 +19,10 @@ CBGXML_BSO_DIR : ./import/source/BSO-2021
 # OPTIONAL
 # Explicit enumeration of the wanted files by XML filename
 #CBGXML_BSG_LIST : [A2A_BSG_2021-04_Regionaal Historisch Centrum Rijnstreek en Lopikerwaard.xml]
-CBGXML_BSG_LIST : []
-CBGXML_BSH_LIST : []
-CBGXML_BSE_LIST : []
-CBGXML_BSO_LIST : []
+# CBGXML_BSG_LIST : ['A2A_BSG_2021-04_NA#Gemeentearchief Oegstgeest.xml', 'A2A_BSG_2021-04_NA#Gemeentearchief Wassenaar.xml' ]
+# CBGXML_BSH_LIST : ['A2A_BSH_2021-04_NA#Gemeentearchief Oegstgeest.xml', 'A2A_BSH_2021-04_NA#Gemeentearchief Wassenaar.xml']
+# CBGXML_BSE_LIST : []
+# CBGXML_BSO_LIST : ['A2A_BSO_2021-04_NA#Gemeentearchief Oegstgeest.xml', 'A2A_BSO_2021-04_NA#Gemeentearchief Wassenaar.xml']
 
 # OPTIONAL
 # Explicit enumeration of the UNwanted files by XML filename
