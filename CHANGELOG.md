@@ -10,11 +10,13 @@ TODO
 
 ## 2021-09-16
 
+- housecleaning
+
 SOLVED BUGS
 
 - all related to the missing database with right tables, added sql files to the repos
 - made some development documentation, wrote down the steps for a quickstart development.md
-
+- added adminer to the stack for mysql interactions and table checking
 
 ## 2021-09-15
 
