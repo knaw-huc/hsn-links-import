@@ -1,18 +1,24 @@
 # LOG
 
+## 2021-09-17
 
-##
+TODO
+- remove the ask for input thing
+- script the pipeline
+- scripten the database commands
+- dockerize, use more env's
 
-```
-SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
-CREATE TABLE `copy_person` LIKE `person`;
-INSERT INTO `copy_person` SELECT * FROM `person`;
-ALTER TABLE `copy_person`RENAME TO `person_o_temp`;
-TRUNCATE TABLE `person_o_temp`;
-```
+## 2021-09-16
+
+SOLVED BUGS
+
+- all related to the missing database with right tables, added sql files to the repos
+- made some development documentation, wrote down the steps for a quickstart development.md
+
 
 ## 2021-09-15
-TODO BUGS
+
+<strike>TODO BUGS </strike>
 - MySQLdb._exceptions.ProgrammingError: (1146, "Table 'links_a2a.registration_o_temp' doesn't exist")
 - MySQLdb._exceptions.ProgrammingError: (1146, "Table 'links_a2a.person_o_temp' doesn't exist")
 - temp tables for person and registration are missing in links_a2a
@@ -24,19 +30,12 @@ In the perlscript:
 `The 2 remaining tables (person_o_temp and registration_o_temp) are not used by this script, ` ln 138
 
 
-
 - a2a_to_original.yaml does not exist en a2a_to_original.py asks for it
+
 - added a a2a_to_original.yaml
 
-TODO
-- remove the ask for input thing
-- pipeline from output result (filled database)
-- python mk_ingest_cbgxml.py; sh ingest-BSG-dateoftoday.sh
-
-
-- ingest seems to work in principle...no pipeline yet. 
 - added a create database (only development?)
-- ignore running from the host, run the scripts from within container
+- from now, ignore running from the host, run the scripts from within container
 - added mysql client for testing
 - https://stackoverflow.com/questions/43102442/whats-the-difference-between-mysqldb-mysqlclient-and-mysql-connector-python
 - removed mysql-connector and replaced it with mysqlclient
