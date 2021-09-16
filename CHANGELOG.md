@@ -5,11 +5,13 @@
 TODO
 - remove the ask for input thing
 - script the pipeline
-- scripten the database commands
+- <strike> scripten the database commands</strike>
 - dockerize, use more env's
 
 ## 2021-09-16
 
+- follow the instructions test succeeded from scratch development instructions, with removed images, containers and volumes etc.
+- rewrote instructions
 - housecleaning
 
 SOLVED BUGS
