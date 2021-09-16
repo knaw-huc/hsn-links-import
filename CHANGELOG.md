@@ -1,5 +1,16 @@
 # LOG
 
+
+##
+
+```
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+CREATE TABLE `copy_person` LIKE `person`;
+INSERT INTO `copy_person` SELECT * FROM `person`;
+ALTER TABLE `copy_person`RENAME TO `person_o_temp`;
+TRUNCATE TABLE `person_o_temp`;
+```
+
 ## 2021-09-15
 TODO BUGS
 - MySQLdb._exceptions.ProgrammingError: (1146, "Table 'links_a2a.registration_o_temp' doesn't exist")

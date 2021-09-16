@@ -6,8 +6,32 @@ Status: in development
 
 ## Docker development
 
-<!-- Start Virtual Environment (cre)
-`source hsn-links-import/bin/activate` -->
+
+### quickstart
+
+`docker-compose up -d`
+
+
+Once:
+
+Create and fill `links_general` database.
+
+`cd hsn-links-import`
+`docker exec -i hsn-links-import_mysqldb_1  mysql -uroot -prood  -e "create database links_general"`
+`docker exec -i hsn-links-import_mysqldb_1  mysql -uroot -prood -Dlinks_general < ref_source.sql`
+`docker exec -i hsn-links-import_mysqldb_1  mysql -uroot -prood  -e "create database links_a2a"`
+
+
+`docker exec -it hsn-links-import_ingester_1  bash`
+
+In the container:
+
+`./mk_ingest_cbgxml.py`
+
+Run the shell-script:
+`sh ingest-BSH-2021.09.16.sh`
+
+
 
 ### Via docker-compose 
 
