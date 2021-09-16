@@ -24,6 +24,11 @@ services:
             TZ: "Europe/Amsterdam"
             MYSQL_ROOT_PASSWORD: "rood"
             MYSQL_DATABASE: "links_general"
+            
+    adminer:
+        image: adminer
+        ports:
+            - 8080:8080            
       
 volumes:
     mysqlvol:                      
