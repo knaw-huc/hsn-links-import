@@ -6,4 +6,4 @@ Status: in development
 
 For development & quickstart:
 
-See the [development page](DEVELOPMENT.MD)
+See the [development page](https://github.com/knaw-huc/hsn-links-import/blob/main/DEVELOPMENT.md)
