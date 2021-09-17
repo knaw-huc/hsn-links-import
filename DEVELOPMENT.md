@@ -115,3 +115,15 @@ mysql -uroot -prood -hmysqldb
 ./mk_ingest_cbgxml.py
 
 ```
+### Runnen
+
+```
+docker run -d -v $(pwd)/ingest_cbgxml:/usr/src/app/ --name ingester_cont -it hsn-links-import_ingester:latest
+
+docker exec -i ingester_cont  env
+
+
+docker exec -it ingester_cont  bash
+# let op it 
+
+```

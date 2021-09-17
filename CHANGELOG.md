@@ -2,6 +2,9 @@
 
 ## 2021-09-17
 
+- environment variables via Dockerfile
+
+
 TODO
 - remove the ask for input thing
 - script the pipeline

@@ -32,6 +32,20 @@ COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
 
+ENV HOST_LINKS=mysqldb
+ENV USER_LINKS=root
+ENV PASSWD_LINKS=rood
+ENV DBNAME_LINKS=links_cleaned
+
+# reference db docker
+ENV HOST_REF=mysqldb
+ENV USER_REF=root
+ENV PASSWD_REF=rood
+ENV DBNAME_REF=links_general
+
+
+# RUN apt-get update 
+
 # CMD ["python3", "mk_ingest_cbgxml.py"]
 # TODO make && choose the right script
 
