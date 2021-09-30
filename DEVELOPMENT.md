@@ -35,16 +35,15 @@ rood
 
 ### ORIGINAL XML files
 
-Obtain test data in import folder. Move it to /ingest_cbgxml/
+Obtain test data in import folder. Move it to /ingest_cbgxml/dataxml
 
-`cd /hsn-links-import/ingest_cbgxml/import
+`cd /hsn-links-import/ingest_cbgxml/dataxml
 
 
 
-```tree
-
-tree source
-source
+```
+tree .
+.
 ├── BSG-2021
 │   ├── A2A_BSG_2021-04_NA#Gemeentearchief\ Oegstgeest.xml
 │   └── A2A_BSG_2021-04_NA#Gemeentearchief\ Wassenaar.xml
@@ -57,7 +56,34 @@ source
 
 3 directories, 6 files
 
+
 ```
+
+### Build standalone image with tags & specific Dockerfile & run
+```
+    docker build -t maartenp/testingest:1.0 -f Dockerfile.prod .
+    docker images
+    # for troubleshootiong and entrypoint overrule https://serverfault.com/questions/594281/how-can-i-override-cmd-when-running-a-docker-image
+    docker run -it  --entrypoint bash maartenp/testingest:1.0
+    # for running it
+    docker run maartenp/testingest:1.0
+    # errors, no network no volume
+    docker run -v $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default maartenp/testingest:1.0
+    # determine collection
+    docker run -e COLLECTION='BSG' -v $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default maartenp/testingest:1.0
+
+    # troubleshooting with network and volumes 
+    docker run -it --entrypoint bash -e COLLECTION='BSG' -v $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default maartenp/testingest:1.0
+
+    # developing
+    docker run -it --entrypoint bash -e COLLECTION='BSG' -v $(pwd)/:/usr/src/app/ --network hsn-links-import_default maartenp/testingest:1.0
+
+
+
+```
+
+
+
 
 
 ### In the container
@@ -136,21 +162,9 @@ mysql -uroot -prood -hmysqldb
 ```
 
 
-### Build standalone image with tags & specific Dockerfile
-
-    docker build -t maartenp/testingest:1.0 -f Dockerfile.prod .
-    docker images
-    # for troubleshootiong and entrypoint overrule https://serverfault.com/questions/594281/how-can-i-override-cmd-when-running-a-docker-image
-    docker run -it  --entrypoint bash maartenp/testingest:1.0
-    # for running it
-    docker run maartenp/testingest:1.0
-    # errors, no network no volume
-    docker run -v $(pwd)/import/:/usr/src/app/import/ --network hsn-links-import_default maartenp/testingest:1.0
-    # determine collection
-    docker run -e COLLECTION='BSG' -v $(pwd)/import/:/usr/src/app/import/ --network hsn-links-import_default maartenp/testingest:1.0
 
 
-### Runnen
+### Run
 
 ```
 docker run -d -v $(pwd)/ingest_cbgxml:/usr/src/app/ --name ingester_cont -it hsn-links-import_ingester:latest

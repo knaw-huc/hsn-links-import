@@ -161,7 +161,8 @@ def process_xml( db_ref, host_links, user_links, passwd_links, a2aperl_dir, cbgx
 			quoting = csv.QUOTE_NONNUMERIC
 			csv_file.write( data.export( "csv", delimiter = delimiter, quoting = quoting ) )
 		
-# process_xml()
+		# process_xml()
+		# return sh_pathname
 
 
 
@@ -207,7 +208,6 @@ def get_yaml_config( yaml_filename ):
 
 if __name__ == "__main__":
 	if debug: print( "mk_ingest_cbgxml.py" )
-	
 	time0 = time()		# seconds since the epoch
 	
 	yaml_filename = "./mk_ingest_cbgxml.yaml"
