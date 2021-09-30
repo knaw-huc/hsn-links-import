@@ -1,0 +1,64 @@
+FROM python:3.9-slim-buster
+# https://pythonspeed.com/articles/base-image-python-docker-images/
+
+WORKDIR /usr/src/app
+
+# PERL and some CPAN modules are required
+# some of the CPAN modules require gcc and make
+
+RUN apt-get update 
+RUN apt-get install -y cpanminus
+RUN (echo y;echo o conf prerequisites_policy follow;echo o conf commit)|cpan
+# https://stackoverflow.com/questions/3462058/how-do-i-automate-cpan-configuration
+
+RUN apt-get install -y make
+RUN apt-get install -y gcc
+RUN cpan App::cpanminus
+RUN cpanm DBI
+
+# necessary for mysql
+# https://stackoverflow.com/questions/4729722/trying-to-install-perl-mysql-dbd-mysql-config-cant-be-found
+RUN apt-get install -y libmariadb-dev-compat
+RUN cpanm DBD::mysql
+
+RUN apt-get install -y expat 
+RUN apt-get install -y libxml-parser-perl
+RUN cpanm XML::Simple
+# https://stackoverflow.com/questions/9693031/how-to-install-xmlparser-without-expat-devel
+
+# TODO COPY whole thing to image
+
+COPY requirements.txt requirements.txt
+
+RUN pip install -r requirements.txt
+
+# dbcredentials result database
+
+ENV HOST_LINKS mysqldb
+ENV USER_LINKS root
+ENV PASSWD_LINKS rood
+ENV DBNAME_LINKS links_cleaned
+
+# reference db docker
+ENV HOST_REF mysqldb
+ENV USER_REF root
+ENV PASSWD_REF rood
+ENV DBNAME_REF links_general
+
+ENV COLLECTION BSH
+ENV INTERACTION no
+
+# COPY entrypoint.sh entrypoint.sh
+
+COPY . .
+
+# RUN apt-get update 
+
+# CMD ["python3", "mk_ingest_cbgxml.py"]
+# TODO make && choose the right script
+
+# only for development
+# https://stackoverflow.com/questions/25775266/how-to-keep-docker-container-running-after-starting-services
+ENTRYPOINT ["sh", "/usr/src/app/entrypoint.sh"]
+# ENTRYPOINT ["tail", "-f", "/dev/null"]
+

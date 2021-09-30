@@ -134,6 +134,22 @@ mysql -uroot -prood -hmysqldb
 ./mk_ingest_cbgxml.py
 
 ```
+
+
+### Build standalone image with tags & specific Dockerfile
+
+    docker build -t maartenp/testingest:1.0 -f Dockerfile.prod .
+    docker images
+    # for troubleshootiong and entrypoint overrule https://serverfault.com/questions/594281/how-can-i-override-cmd-when-running-a-docker-image
+    docker run -it  --entrypoint bash maartenp/testingest:1.0
+    # for running it
+    docker run maartenp/testingest:1.0
+    # errors, no network no volume
+    docker run -v $(pwd)/import/:/usr/src/app/import/ --network hsn-links-import_default maartenp/testingest:1.0
+    # determine collection
+    docker run -e COLLECTION='BSG' -v $(pwd)/import/:/usr/src/app/import/ --network hsn-links-import_default maartenp/testingest:1.0
+
+
 ### Runnen
 
 ```

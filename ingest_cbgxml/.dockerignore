@@ -1,0 +1,7 @@
+import*
+# log
+.dockerignore
+ingest-*
+__pycache__
+__init__.py
+Dockerfile*

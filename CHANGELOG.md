@@ -3,6 +3,12 @@
 
 ## 30-9-2021
 
+TODO
+- connect python and perl script
+DONE
+- docker run command that works with mounted volume and network and parameter for collection (the first part)
+- added .Dockerignore file
+- separate Dockerfiles for development & production
 - environment variables during runtime exec script overrides the ones in Dockerfile, example in development.md
 - removed interaction with ENV INTERACTION
 - experiments with standalone containers and entrypoint.sh

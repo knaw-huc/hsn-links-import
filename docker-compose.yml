@@ -5,7 +5,7 @@ services:
     ingester:
         build:
             context: ./ingest_cbgxml
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile.dev
         environment: 
             LINKS_HOME: './ingest_cbgxml'
             COLLECTION: 'BSH' # possible values BSO, BSH, BSG
