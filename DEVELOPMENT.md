@@ -81,6 +81,25 @@ Run the python script:
 `a2a_to_original.py`
 
 
+### Run script from outside on the running ingester container
+
+```
+docker exec  -e COLLECTION='BSH' -i <dockerContainerID>  /usr/src/app/mk_ingest_cbgxml.py
+docker exec  -e COLLECTION='BSO' -i <dockerContainerID>  /usr/src/app/mk_ingest_cbgxml.py
+docker exec  -e COLLECTION='BSG' -i <dockerContainerID>  /usr/src/app/mk_ingest_cbgxml.py
+```
+
+
+### Develop with docker-compose 
+
+
+```
+docker-compose stop ingester
+# change Dockerfile
+docker-compose build ingester
+docker-compose  up -d  ingester
+```
+
 ### BUILD PROCESS via docker-compose 
 
 

@@ -32,16 +32,24 @@ COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
 
-ENV HOST_LINKS=mysqldb
-ENV USER_LINKS=root
-ENV PASSWD_LINKS=rood
-ENV DBNAME_LINKS=links_cleaned
+# dbcredentials result database
+
+ENV HOST_LINKS mysqldb
+ENV USER_LINKS root
+ENV PASSWD_LINKS rood
+ENV DBNAME_LINKS links_cleaned
 
 # reference db docker
-ENV HOST_REF=mysqldb
-ENV USER_REF=root
-ENV PASSWD_REF=rood
-ENV DBNAME_REF=links_general
+ENV HOST_REF mysqldb
+ENV USER_REF root
+ENV PASSWD_REF rood
+ENV DBNAME_REF links_general
+
+ENV COLLECTION BSH
+ENV INTERACTION no
+
+# COPY entrypoint.sh entrypoint.sh
+
 
 
 # RUN apt-get update 
@@ -51,6 +59,6 @@ ENV DBNAME_REF=links_general
 
 # only for development
 # https://stackoverflow.com/questions/25775266/how-to-keep-docker-container-running-after-starting-services
-
+# ENTRYPOINT ["sh", "/usr/src/app/entrypoint.sh"]
 ENTRYPOINT ["tail", "-f", "/dev/null"]
 

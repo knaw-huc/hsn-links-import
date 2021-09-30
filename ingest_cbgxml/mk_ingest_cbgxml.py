@@ -64,9 +64,14 @@ def process_xml( db_ref, host_links, user_links, passwd_links, a2aperl_dir, cbgx
 		if yaml_skip > 0:
 			print( "\nIgnoring %d files as specified in config" % yaml_skip )
 		
-		yn = input( "No XML files specified by the cbgxml_list \nAdd all %d eligible xml files from the cbgxml_dir? [y,N] "  % len( cbgxml_list ) )
-		if yn.lower() == 'y':
+		print(os.environ['INTERACTION'])
+		print(type(os.environ['INTERACTION']))
+		if(os.environ['INTERACTION'] == 'no' ):
 			add_all = True
+		else:	
+			yn = input( "No XML files specified by the cbgxml_list \nAdd all %d eligible xml files from the cbgxml_dir? [y,N] "  % len( cbgxml_list ) )
+			if yn.lower() == 'y':
+				add_all = True
 	else:
 		print('yes list')
 

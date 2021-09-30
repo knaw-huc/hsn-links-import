@@ -1,5 +1,14 @@
 # LOG
 
+
+## 30-9-2021
+
+- environment variables during runtime exec script overrides the ones in Dockerfile, example in development.md
+- removed interaction with ENV INTERACTION
+- experiments with standalone containers and entrypoint.sh
+
+
+
 ## 2021-09-17
 
 - environment variables via Dockerfile
