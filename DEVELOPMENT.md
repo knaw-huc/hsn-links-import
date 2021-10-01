@@ -64,19 +64,19 @@ tree .
     docker build -t maartenp/testingest:1.0 -f Dockerfile.prod .
     docker images
     # for troubleshootiong and entrypoint overrule https://serverfault.com/questions/594281/how-can-i-override-cmd-when-running-a-docker-image
-    docker run -it  --entrypoint bash maartenp/testingest:1.0
+    docker run --rm -it  --entrypoint bash maartenp/testingest:1.0
     # for running it
     docker run maartenp/testingest:1.0
     # errors, no network no volume
-    docker run -v $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default maartenp/testingest:1.0
+    docker run --rm -v $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default maartenp/testingest:1.0
     # determine collection
-    docker run -e COLLECTION='BSG' -v $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default maartenp/testingest:1.0
+    docker run --rm -e COLLECTION='BSG' -v $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default maartenp/testingest:1.0
 
-    # troubleshooting with network and volumes 
-    docker run -it --entrypoint bash -e COLLECTION='BSG' -v $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default maartenp/testingest:1.0
+    # troubleshooting with network and volumes, override entrypoint
+    docker run --rm -it --entrypoint bash -e COLLECTION='BSG' -v $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default maartenp/testingest:1.0
 
     # developing
-    docker run -it --entrypoint bash -e COLLECTION='BSG' -v $(pwd)/:/usr/src/app/ --network hsn-links-import_default maartenp/testingest:1.0
+    docker run -rm -it --entrypoint bash -e COLLECTION='BSG' -v $(pwd)/:/usr/src/app/ --network hsn-links-import_default maartenp/testingest:1.0
 
 
 

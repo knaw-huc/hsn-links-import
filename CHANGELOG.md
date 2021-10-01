@@ -1,6 +1,10 @@
 # LOG
 
 
+## 1-10-2021
+
+- rm containes after use
+
 ## 30-9-2021
 
 TODO
