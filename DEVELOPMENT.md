@@ -136,7 +136,6 @@ docker exec  -e COLLECTION='BSO' -i <dockerContainerID>  /usr/src/app/mk_ingest_
 docker exec  -e COLLECTION='BSG' -i <dockerContainerID>  /usr/src/app/mk_ingest_cbgxml.py
 ```
 
-
 ### Develop with docker-compose 
 
 
@@ -197,3 +196,43 @@ docker exec -it ingester_cont  bash
 # let op it 
 
 ```
+
+### Scripts and Databases
+
+#### mk_ingest_cbgxml.py 
+
+input: a collection of N xml files
+output: a shell script with N calls to import_a2a_auto.pl
+uses links_general as a lookup database
+uses mk_ingest_cbgxml.yaml for paths
+uses hsn_links-db.yaml for db-credential lookup database links_general
+
+#### import_a2a_auto.pl 
+
+arg 2: host
+arg 6: user
+arg 7: pwd
+parses xml files and conversion to link_a2a database
+drops and create all the tables during this process, but not registration_o_temp and person_o_temp
+
+That will taken care of by the next script.
+
+#### a2a_to_original.py
+
+converts links_a2a to links_original
+It uses a2a_to_original.sql for it's queries. 
+It parses de .sql file and execute the queries. 
+There logged.
+
+
+
+first truncate the two temp tables in links_a2a 
+
+TRUNCATE TABLE links_a2a.registration_o_temp ;
+TRUNCATE TABLE links_a2a.person_o_temp ;
+
+
+hsn_links_db.py is a database help file, also for mk_ingest_cbgxml
+
+
+

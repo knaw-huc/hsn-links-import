@@ -4,7 +4,7 @@
 ## 13-10-2021
 
 TODO
-- database from perl or something else
+- database / table generation from perl or something else
 - logging? Turn it off or redirect or surplant it with something else
 - enviromental variables with envsubst (KM trick)
 - discuss

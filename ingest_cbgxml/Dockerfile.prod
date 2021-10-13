@@ -28,6 +28,14 @@ RUN cpanm XML::Simple
 
 # TODO COPY whole thing to image
 
+# Install envsubst tool for adding env variables to config file 
+RUN apt update && \
+    apt install gettext-base  -y && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists/*
+
+
+
 COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt

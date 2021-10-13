@@ -10,5 +10,6 @@ datum=$(date +"%Y.%m.%d")
 filename=ingest-$name-$datum.sh
 echo $filename
 sh ./$filename
-rm ./$filename
+/usr/src/app/a2a_to_original.py
+# rm ./$filename
 
