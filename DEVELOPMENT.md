@@ -61,6 +61,7 @@ tree .
 
 ### Build standalone image with tags & specific Dockerfile & run
 ```
+    cd ingest_dbgxml
     docker build -t maartenp/testingest:1.0 -f Dockerfile.prod .
     docker images
     # for troubleshootiong and entrypoint overrule https://serverfault.com/questions/594281/how-can-i-override-cmd-when-running-a-docker-image
@@ -76,13 +77,33 @@ tree .
     docker run --rm -it --entrypoint bash -e COLLECTION='BSG' -v $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default maartenp/testingest:1.0
 
     # developing
-    docker run -rm -it --entrypoint bash -e COLLECTION='BSG' -v $(pwd)/:/usr/src/app/ --network hsn-links-import_default maartenp/testingest:1.0
-
+    docker run --rm -it --entrypoint bash -e COLLECTION='BSG' -v $(pwd)/:/usr/src/app/ --network hsn-links-import_default maartenp/testingest:1.0
+    
+   
+    # with mounting the current dir, it's overriding the included things, then you can build and develop at the same time
+    docker run --rm -it  -e COLLECTION='BSG' -v $(pwd)/:/usr/src/app/ -v  $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default maartenp/testingest:1.0
 
 
 ```
 
+### End goal
 
+BUILD
+- image based on python enriched with a perl stack
+- define variables for connection to mysql databases, put them in enviromental variables (for the image)
+- write an entrypoint script
+
+
+RUN
+- Mount a directory with xml files
+- connect to network with a database server
+- give a collection abbreviation in an environmental varible
+- run the entrypoint script
+
+
+```
+docker run --rm  -e COLLECTION='BSH'  -v  $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default maartenp/testingest:1.0
+```
 
 
 

@@ -207,6 +207,7 @@ def get_yaml_config( yaml_filename ):
 
 
 if __name__ == "__main__":
+	# print('Maartens change')
 	if debug: print( "mk_ingest_cbgxml.py" )
 	time0 = time()		# seconds since the epoch
 	

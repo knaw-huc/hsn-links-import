@@ -17,7 +17,10 @@ DONE
 - removed interaction with ENV INTERACTION
 - experiments with standalone containers and entrypoint.sh
 
+## 2021-10-13
 
+- production version
+- development flow improvements: focus on creating the docker image 
 
 ## 2021-09-17
 
