@@ -4,5 +4,11 @@
 # envsubst < "cleaned2rdf-template.yaml" > "cleaned2rdf.yaml"
 
 /usr/src/app/mk_ingest_cbgxml.py
-cat requirements.txt
+name=$COLLECTION
+# watch it: every space in this date syntax is essential 
+datum=$(date +"%Y.%m.%d")
+filename=ingest-$name-$datum.sh
+echo $filename
+sh ./$filename
+rm ./$filename
 

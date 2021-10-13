@@ -1,9 +1,26 @@
 # LOG
 
 
-## 1-10-2021
+## 13-10-2021
 
-- rm containes after use
+TODO
+- database from perl or something else
+- logging? Turn it off or redirect or surplant it with something else
+- enviromental variables with envsubst (KM trick)
+- discuss
+- integration with other containers
+
+BUILD
+
+docker build -t maartenp/testingest:1.0 -f Dockerfile.prod .
+
+RUN
+
+docker run --rm -it  -e COLLECTION='BSG'  -v  $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default maartenp/testingest:1.0
+
+- it runs!
+- rm containres after use
+- entrypoint scripts
 
 ## 30-9-2021
 
