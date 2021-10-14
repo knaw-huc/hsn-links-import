@@ -24,7 +24,7 @@ Check with adminer.
 
 http://localhost:8080/
 
-Credentials:
+Credentials:    
 
 ```
 mysqldb

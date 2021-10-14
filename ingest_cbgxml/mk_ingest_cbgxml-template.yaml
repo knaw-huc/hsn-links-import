@@ -1,0 +1,44 @@
+# YAML configuration file for mk_ingest_cbgxml.py
+
+# REQUIRED: YAML main for db access
+# YAML_MAIN : "/data/links/python/hsn-links-db.yaml"
+YAML_MAIN : "./hsn-links-db.yaml"
+
+
+# REQUIRED
+# Directory containing the import_a2a_auto.pl Perl script
+A2APERL_DIR : .
+
+# REQUIRED
+# Directories containing the CBG XML files
+CBGXML_BSG_DIR : "$CBGXML_BSG_DIR"
+CBGXML_BSH_DIR :  "$CBGXML_BSH_DIR"
+# CBGXML_BSE_DIR : /data/links/ingest/cbg_a2a/xml/CBG-2021/BSE-2021/BSE2021-unpacked
+CBGXML_BSO_DIR :  "$CBGXML_BSO_DIR"
+
+# OPTIONAL
+# Explicit enumeration of the wanted files by XML filename
+#CBGXML_BSG_LIST : [A2A_BSG_2021-04_Regionaal Historisch Centrum Rijnstreek en Lopikerwaard.xml]
+# CBGXML_BSG_LIST : ['A2A_BSG_2021-04_NA#Gemeentearchief Oegstgeest.xml', 'A2A_BSG_2021-04_NA#Gemeentearchief Wassenaar.xml' ]
+# CBGXML_BSH_LIST : ['A2A_BSH_2021-04_NA#Gemeentearchief Oegstgeest.xml', 'A2A_BSH_2021-04_NA#Gemeentearchief Wassenaar.xml']
+# CBGXML_BSE_LIST : []
+# CBGXML_BSO_LIST : ['A2A_BSO_2021-04_NA#Gemeentearchief Oegstgeest.xml', 'A2A_BSO_2021-04_NA#Gemeentearchief Wassenaar.xml']
+
+# OPTIONAL
+# Explicit enumeration of the UNwanted files by XML filename
+# CBGXML_BSG_SKIP : [
+#     A2A_BSG_2021-04_Gemeentearchief Ede.xml,
+#     A2A_BSG_2021-04_Gemeentearchief Venray.xml,
+#     A2A_BSG_2021-04_Westfries Archief.xml
+# ]
+# CBGXML_BSH_SKIP : [
+#     A2A_BSH_2021-04_Gemeentearchief Ede.xml,
+#     A2A_BSH_2021-04_Gemeentearchief Venray.xml,
+#     A2A_BSH_2021-04_Westfries Archief.xml
+# ]
+# CBGXML_BSE_SKIP : []
+# CBGXML_BSO_SKIP : [
+#     A2A_BSO_2021-04_Gemeentearchief Ede.xml,
+#     A2A_BSO_2021-04_Gemeentearchief Venray.xml,
+#     A2A_BSO_2021-04_Westfries Archief.xml
+# ]

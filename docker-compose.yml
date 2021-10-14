@@ -2,18 +2,18 @@ version: '2'
 services: 
 
     # python  script: conversion of xmlfiles
-    ingester:
-        build:
-            context: ./ingest_cbgxml
-            dockerfile: Dockerfile.prod
-        environment: 
-            LINKS_HOME: './ingest_cbgxml'
-            COLLECTION: 'BSH' # possible values BSO, BSH, BSG
-        ports:
-            - 8888:5000
-        volumes:
-            - ./ingest_cbgxml/:/usr/src/app
-            - ./dataxml/:/usr/src/app/dataxml/        
+    # ingester:
+    #     build:
+    #         context: ./ingest_cbgxml
+    #         dockerfile: Dockerfile.prod
+    #     environment: 
+    #         LINKS_HOME: './ingest_cbgxml'
+    #         COLLECTION: 'BSH' # possible values BSO, BSH, BSG
+    #     ports:
+    #         - 8888:5000
+    #     volumes:
+    #         - ./ingest_cbgxml/:/usr/src/app
+    #         - ./dataxml/:/usr/src/app/dataxml/        
        
 
     mysqldb:
