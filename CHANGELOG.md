@@ -3,6 +3,7 @@
 
 ## 19-10-2021
 
+- content of logfile to standard output after running
 - `docker push mvdpeetje/hsnl_ingester:1.1`
 - envsubstitution in entrypoint
 - Did put it on Dockerhub: https://hub.docker.com/repository/docker/mvdpeetje/hsnl_ingester

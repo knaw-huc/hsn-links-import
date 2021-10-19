@@ -1,12 +1,13 @@
 TODO
 
-- enviromental variables with envsubst (KM trick),
-- logging? Turn it off or redirect or surplant it with something else
-- discuss
+- optimalization?
+- discuss 
 - integration with other containers
 
-
 DONE
+
+- logging? Turn it off or redirect or surplant it with something else. to standard output after running
+- enviromental variables with envsubst (KM trick),
 - push to Dockerhub
 - test with Dockerhub
 - - description in Dockerhub

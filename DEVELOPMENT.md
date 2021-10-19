@@ -195,7 +195,12 @@ docker exec -i ingester_cont  env
 
 docker exec -it ingester_cont  bash
 # let op it 
+```
 
+Troubleshoot an image without mounting, look if everything on it's right place
+
+```
+ docker run --rm -it --entrypoint bash  -e COLLECTION='BSO'  -v  $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default mvdpeetje/hsnl_ingester:1.1 
 ```
 
 ### Push to Dockerhub

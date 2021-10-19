@@ -325,4 +325,10 @@ if __name__ == "__main__":
 	str_elapsed = format_secs( time() - t1 )
 	log.write( "Done in %s\n" % str_elapsed )
 
+	print("content of the logfile: %s" % log_path )
+	a_file = open(log_path)
+	lines = a_file.readlines()
+	for line in lines:
+		print(line)
+
 # [eof]
