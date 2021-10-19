@@ -4,7 +4,9 @@ TODO
 - logging? Turn it off or redirect or surplant it with something else
 - discuss
 - integration with other containers
-- 
+- push to Dockerhub
+- test with Dockerhub
+- - description in Dockerhub
 
 DONE
 - script the pipeline

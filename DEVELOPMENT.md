@@ -182,8 +182,6 @@ mysql -uroot -prood -hmysqldb
 ```
 
 
-
-
 ### Run
 
 ```
@@ -196,6 +194,17 @@ docker exec -it ingester_cont  bash
 # let op it 
 
 ```
+
+### Push to Dockerhub
+
+On Dockerhub. Create repository mvdpeetje/hsnl_ingester
+
+    docker tag maartenp/testingest:1.0 mvdpeetje/hsnl_ingester:1.0
+    docker push mvdpeetje/hsnl_ingester:1.0
+
+For a new tab
+    docker push mvdpeetje/hsnl_ingester:tagname
+
 
 ### Scripts and Databases
 
