@@ -3,17 +3,17 @@
 
 # links db docker
 
-HOST_LINKS : "mysqldb"
-USER_LINKS : "root"
-PASSWD_LINKS : "rood"
+HOST_LINKS : mysqldb
+USER_LINKS : root
+PASSWD_LINKS : rood
 DBNAME_LINKS  : links_cleaned
 
 
 # reference db docker
 
-HOST_REF   : "mysqldb"
-USER_REF   : "root"
-PASSWD_REF : "rood"
+HOST_REF   : mysqldb
+USER_REF   : root
+PASSWD_REF : rood
 
 DBNAME_REF : links_general
 

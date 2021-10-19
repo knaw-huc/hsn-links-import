@@ -2,35 +2,33 @@
 
 ## quickstart Docker development
 
-Purpose: to get you up and running
-
-`docker-compose up -d`
-
-Once:
+Purpose: to get you up and running for development
 
 ### DATABASES
 
-Create them and fill them. 
+`docker-compose up -d`
+
+
+The docker-compose file starts-up a database and adminer.
+
+Run database.sh ONCE
+
+Creates the databases and fills them. 
+
 Run `./database.sh 2>/dev/null`
 
 
+    cd hsn-links-import/
+    ./database.sh 2>/dev/null
 
-```bash
-cd hsn-links-import/
-./database.sh 2>/dev/null
-```
 
-Check with adminer.
-
-http://localhost:8080/
+Check with adminer http://localhost:8080/
 
 Credentials:    
 
-```
-mysqldb
-root
-rood
-```
+    mysqldb
+    root
+    rood
 
 
 ### ORIGINAL XML files
@@ -105,6 +103,11 @@ RUN
 docker run --rm  -e COLLECTION='BSH'  -v  $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default maartenp/testingest:1.0
 ```
 
+End goal reached.
+
+```
+docker run --rm -e COLLECTION='BSH'  -v  $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default mvdpeetje/hsnl_ingester:1.1
+```
 
 
 ### In the container
@@ -245,7 +248,7 @@ You can override them during runtime. For example:
 Prerequisites. A running mysql instance, with a network name that you have to adress during runtime.
 
 
-    docker run --rm -it  -e COLLECTION='BSG' -v $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default mvdpeetje/hsnl_ingester:1.0
+    docker run --rm -e COLLECTION='BSG' -v $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default mvdpeetje/hsnl_ingester:1.0
 
 And it works! Per collection.
 

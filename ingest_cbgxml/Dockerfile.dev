@@ -48,6 +48,10 @@ ENV DBNAME_REF links_general
 ENV COLLECTION BSH
 ENV INTERACTION no
 
+ENV CBGXML_BSG_DIR  ./dataxml/BSG-2021
+ENV CBGXML_BSH_DIR ./dataxml/BSH-2021
+ENV CBGXML_BSO_DIR  ./dataxml/BSO-2021
+
 # COPY entrypoint.sh entrypoint.sh
 
 

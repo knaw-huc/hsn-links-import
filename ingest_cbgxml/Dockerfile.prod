@@ -35,38 +35,33 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
 
 
-
 COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
 
 # dbcredentials result database
 
-ENV HOST_LINKS mysqldb
-ENV USER_LINKS root
-ENV PASSWD_LINKS rood
+ENV MYSQL_LINKS_HOSTURL mysqldb
+ENV MYSQL_LINKS_USERNAME root
+ENV MYSQL_LINKS_PASSWORD rood
 ENV DBNAME_LINKS links_cleaned
 
 # reference db docker
-ENV HOST_REF mysqldb
-ENV USER_REF root
-ENV PASSWD_REF rood
+ENV MYSQL_REF_HOSTURL mysqldb
+ENV MYSQL_REF_USERNAME root
+ENV MYSQL_REF_PASSWORD rood
 ENV DBNAME_REF links_general
 
+ENV CBGXML_BSG_DIR  ./dataxml/BSG-2021
+ENV CBGXML_BSH_DIR ./dataxml/BSH-2021
+ENV CBGXML_BSO_DIR  ./dataxml/BSO-2021
+
+# for the script (s)
 ENV COLLECTION BSH
 ENV INTERACTION no
-
-# COPY entrypoint.sh entrypoint.sh
+ENV LOGGIE	no
 
 COPY . .
 
-# RUN apt-get update 
-
-# CMD ["python3", "mk_ingest_cbgxml.py"]
-# TODO make && choose the right script
-
-# only for development
-# https://stackoverflow.com/questions/25775266/how-to-keep-docker-container-running-after-starting-services
 ENTRYPOINT ["sh", "/usr/src/app/entrypoint.sh"]
-# ENTRYPOINT ["tail", "-f", "/dev/null"]
 

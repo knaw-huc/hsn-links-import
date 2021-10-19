@@ -11,10 +11,10 @@ A2APERL_DIR : .
 
 # REQUIRED
 # Directories containing the CBG XML files
-CBGXML_BSG_DIR : "./dataxml/BSG-2021"
-CBGXML_BSH_DIR :  "./dataxml/BSH-2021"
+CBGXML_BSG_DIR : ./dataxml/BSG-2021
+CBGXML_BSH_DIR : ./dataxml/BSH-2021
 # CBGXML_BSE_DIR : /data/links/ingest/cbg_a2a/xml/CBG-2021/BSE-2021/BSE2021-unpacked
-CBGXML_BSO_DIR :  "./dataxml/BSO-2021"
+CBGXML_BSO_DIR : ./dataxml/BSO-2021
 
 # OPTIONAL
 # Explicit enumeration of the wanted files by XML filename

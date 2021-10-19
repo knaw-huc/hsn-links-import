@@ -1,0 +1,19 @@
+# YAML configuration file to access the hsn & links dbs
+
+
+# links db docker
+
+HOST_LINKS : "$MYSQL_LINKS_HOSTURL"
+USER_LINKS : "$MYSQL_LINKS_USERNAME"
+PASSWD_LINKS : "$MYSQL_LINKS_PASSWORD"
+DBNAME_LINKS  : links_cleaned
+
+
+# reference db docker
+
+HOST_REF   : "$MYSQL_REF_HOSTURL"
+USER_REF   : "$MYSQL_REF_USERNAME"
+PASSWD_REF : "$MYSQL_REF_PASSWORD"
+
+DBNAME_REF : links_general
+

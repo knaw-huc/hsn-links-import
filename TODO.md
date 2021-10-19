@@ -1,14 +1,15 @@
 TODO
 
-- enviromental variables with envsubst (KM trick)
+- enviromental variables with envsubst (KM trick),
 - logging? Turn it off or redirect or surplant it with something else
 - discuss
 - integration with other containers
+
+
+DONE
 - push to Dockerhub
 - test with Dockerhub
 - - description in Dockerhub
-
-DONE
 - script the pipeline
 - connect python and perl script
 - use more env's

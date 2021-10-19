@@ -1,17 +1,16 @@
 # LOG
 
 
-
 ## 19-10-2021
 
+- `docker push mvdpeetje/hsnl_ingester:1.1`
+- envsubstitution in entrypoint
 - Did put it on Dockerhub: https://hub.docker.com/repository/docker/mvdpeetje/hsnl_ingester
 - wrote instructions for running
 - tested the procedure, pulling, running
 
 
 ## 13-10-2021
-
-
 
 BUILD
 
