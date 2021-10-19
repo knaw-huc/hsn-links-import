@@ -57,7 +57,7 @@ You can override them during runtime. For example:
 Prerequisites. A running mysql instance, with a network name that you have to adress during runtime.
 
 
-    docker run --rm -it  -e COLLECTION='BSG' -v $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default mvdpeetje/hsnl_ingester:1.0
+    docker run --rm -e COLLECTION='BSG' -v $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default mvdpeetje/hsnl_ingester:1.0
 
 
 For development:

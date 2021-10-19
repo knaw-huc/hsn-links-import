@@ -5,6 +5,7 @@
 
 - content of logfile to standard output after running
 - `docker push mvdpeetje/hsnl_ingester:1.1`
+- toke the same names as KM for enviromental variables with mysql
 - envsubstitution in entrypoint
 - Did put it on Dockerhub: https://hub.docker.com/repository/docker/mvdpeetje/hsnl_ingester
 - wrote instructions for running
