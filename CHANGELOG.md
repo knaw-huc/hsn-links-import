@@ -1,14 +1,17 @@
 # LOG
 
 
+
+## 19-10-2021
+
+- Did put it on Dockerhub: https://hub.docker.com/repository/docker/mvdpeetje/hsnl_ingester
+- wrote instructions for running
+- tested the procedure, pulling, running
+
+
 ## 13-10-2021
 
-TODO
-- database / table generation from perl or something else
-- logging? Turn it off or redirect or surplant it with something else
-- enviromental variables with envsubst (KM trick)
-- discuss
-- integration with other containers
+
 
 BUILD
 
@@ -24,15 +27,9 @@ docker run --rm -it  -e COLLECTION='BSG'  -v  $(pwd)/dataxml/:/usr/src/app/datax
 
 ## 30-9-2021
 
-TODO
-- connect python and perl script
+
 DONE
-- docker run command that works with mounted volume and network and parameter for collection (the first part)
-- added .Dockerignore file
-- separate Dockerfiles for development & production
-- environment variables during runtime exec script overrides the ones in Dockerfile, example in development.md
-- removed interaction with ENV INTERACTION
-- experiments with standalone containers and entrypoint.sh
+
 
 ## 2021-10-13
 
@@ -44,11 +41,6 @@ DONE
 - environment variables via Dockerfile
 
 
-TODO
-- remove the ask for input thing
-- script the pipeline
-- <strike> scripten the database commands</strike>
-- dockerize, use more env's
 
 ## 2021-09-16
 
