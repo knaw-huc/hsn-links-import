@@ -2,17 +2,17 @@
 
 Docker version of ingester of HSN. 
 
-Status: nearly finished
+Status: "finished"
 
 ## pull image
 
-    docker pull mvdpeetje/hsnl_ingester:1.0
+    docker pull mvdpeetje/hsnl_ingester
 
 ## obtain data
 
 ```
 mkdir -p hsnl/dataxml
-cd hsnltest
+cd hsnl
 cp data to dataxml:
 ```
 

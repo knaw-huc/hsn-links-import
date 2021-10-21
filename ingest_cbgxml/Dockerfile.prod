@@ -26,7 +26,6 @@ RUN apt-get install -y libxml-parser-perl
 RUN cpanm XML::Simple
 # https://stackoverflow.com/questions/9693031/how-to-install-xmlparser-without-expat-devel
 
-# TODO COPY whole thing to image
 
 # Install envsubst tool for adding env variables to config file 
 RUN apt update && \
