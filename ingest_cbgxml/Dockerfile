@@ -51,16 +51,16 @@ ENV MYSQL_REF_USERNAME root
 ENV MYSQL_REF_PASSWORD rood
 ENV DBNAME_REF links_general
 
-ENV CBGXML_BSG_DIR  ./dataxml/BSG-2021
-ENV CBGXML_BSH_DIR ./dataxml/BSH-2021
-ENV CBGXML_BSO_DIR  ./dataxml/BSO-2021
+# data directory structure
+ENV CBGXML_BSG_DIR  ./dataxml/BSG
+ENV CBGXML_BSH_DIR ./dataxml/BSH
+ENV CBGXML_BSO_DIR  ./dataxml/BSO
 
 # for the script (s)
-ENV COLLECTION BSH
 ENV INTERACTION no
 ENV LOGGIE	no
 
 COPY . .
 
-ENTRYPOINT ["sh", "/usr/src/app/entrypoint.sh"]
+ENTRYPOINT ["bash", "/usr/src/app/entrypoint.sh"]
 

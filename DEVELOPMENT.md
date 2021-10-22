@@ -60,10 +60,10 @@ tree .
 ### Build standalone image with tags & specific Dockerfile & run
 ```
     cd ingest_dbgxml
-    docker build -t maartenp/testingest:1.0 -f Dockerfile.prod .
+    docker build -t maartenp/testingest .
     docker images
     # for troubleshootiong and entrypoint overrule https://serverfault.com/questions/594281/how-can-i-override-cmd-when-running-a-docker-image
-    docker run --rm -it  --entrypoint bash maartenp/testingest:1.0
+    docker run --rm -it  --entrypoint bash maartenp/testingest
     # for running it
     docker run maartenp/testingest:1.0
     # errors, no network no volume
@@ -91,6 +91,10 @@ BUILD
 - define variables for connection to mysql databases, put them in enviromental variables (for the image)
 - write an entrypoint script
 
+```
+    docker build -t mvdpeetje/nsnl_ingester .
+    docker push mvdpeetje/nsnl_ingester
+```
 
 RUN
 - Mount a directory with xml files
@@ -100,13 +104,13 @@ RUN
 
 
 ```
-docker run --rm  -e COLLECTION='BSH'  -v  $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default maartenp/testingest:1.0
+docker run --rm  -v  $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default mvdpeetje/hsnl_ingester
 ```
 
 End goal reached.
 
 ```
-docker run --rm -e COLLECTION='BSH'  -v  $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default mvdpeetje/hsnl_ingester:1.1
+docker run --rm  -v  $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default mvdpeetje/hsnl_ingester
 ```
 
 
@@ -218,44 +222,6 @@ Getest:
     docker pull mvdpeetje/hsnl_ingester:1.0
 
 
-Wrote instructions:
-docker pull mvdpeetje/hsnl_ingester:1.0
-mkdir -p hsnltest/dataxml
-cd hsnltest
-
-cp datadirectories to dataxml:
-
-(in my case: cp -rv  ~/dockerprojecten/hsn-links-import/ingest_cbgxml/dataxml/  ./dataxml)
-
-The archive files has to be in a specific directory structure:
-
-ENVIRONMENTAL VARIABLES:
-
-COLLECTION: possible values BSG, BSO, BSH
-
-These are the (development) defaults. From the Dockerfile.prod
-
-ENV HOST_LINKS mysqldb
-ENV USER_LINKS root
-ENV PASSWD_LINKS rood
-ENV DBNAME_LINKS links_cleaned
-
-# reference db docker
-ENV HOST_REF mysqldb
-ENV USER_REF root
-ENV PASSWD_REF rood
-ENV DBNAME_REF links_general
-
-ENV COLLECTION BSH
-ENV INTERACTION no
-
-You can override them during runtime. For example:
-Prerequisites. A running mysql instance, with a network name that you have to adress during runtime.
-
-
-    docker run --rm -e COLLECTION='BSG' -v $(pwd)/dataxml/:/usr/src/app/dataxml/ --network hsn-links-import_default mvdpeetje/hsnl_ingester:1.0
-
-And it works! Per collection.
 
 
 ### Scripts and Databases

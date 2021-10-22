@@ -1,7 +1,14 @@
 # LOG
 
+## 2021-10-22
 
-## 19-10-2021
+- adapted entrypoint script for running all the collections
+- adapted Dockerfile
+- adapted Readmes
+- new images
+- make the dataxml directories, general, one name and default BSG BSO and BSH
+
+## 2021-10-19
 
 - content of logfile to standard output after running
 - `docker push mvdpeetje/hsnl_ingester:1.1`
@@ -12,7 +19,7 @@
 - tested the procedure, pulling, running
 
 
-## 13-10-2021
+## 2021-10-13
 
 BUILD
 
@@ -26,7 +33,7 @@ docker run --rm -it  -e COLLECTION='BSG'  -v  $(pwd)/dataxml/:/usr/src/app/datax
 - rm containres after use
 - entrypoint scripts
 
-## 30-9-2021
+## 2021-09-30
 
 
 DONE
@@ -57,7 +64,7 @@ SOLVED BUGS
 
 ## 2021-09-15
 
-<strike>TODO BUGS </strike>
+<strike>SOLVED (database was not complete) </strike>
 - MySQLdb._exceptions.ProgrammingError: (1146, "Table 'links_a2a.registration_o_temp' doesn't exist")
 - MySQLdb._exceptions.ProgrammingError: (1146, "Table 'links_a2a.person_o_temp' doesn't exist")
 - temp tables for person and registration are missing in links_a2a

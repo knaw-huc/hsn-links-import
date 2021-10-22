@@ -81,6 +81,8 @@ def process_xml( db_ref, host_links, user_links, passwd_links, a2aperl_dir, cbgx
 	sh_filename = "ingest-%s-%s.sh" % ( ghoe_type, timestamp )
 	sh_pathname = os.path.join( os.path.dirname(__file__), sh_filename )
 	print( "sh_pathname: %s" % sh_pathname )
+
+	
 	
 	csv_filename = "ingest-%s-%s.csv" % ( ghoe_type, timestamp )
 	csv_pathname = os.path.join( os.path.dirname(__file__), csv_filename )
@@ -208,6 +210,7 @@ def get_yaml_config( yaml_filename ):
 
 if __name__ == "__main__":
 	# print('Maartens change')
+	print("COLLECTION: ", os.environ[ "COLLECTION" ])
 	if debug: print( "mk_ingest_cbgxml.py" )
 	time0 = time()		# seconds since the epoch
 	

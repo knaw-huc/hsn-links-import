@@ -265,6 +265,8 @@ def get_yaml_config( yaml_filename ):
 
 
 if __name__ == "__main__":
+
+
 	if debug: print( "a2a_to_original.py" )
 	
 	time0 = time()		# seconds since the epoch
