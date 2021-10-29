@@ -18,7 +18,8 @@ cd hsnl
 Move XML data to dataxml.
 The archive files has to be in a specific directory structure.
 Every 'collection', birth (BSG), mariage (BSH) and death (BSD), should be in a seperate directory.
-Make a note of the directories. 
+Make a note of the directories. Prefered directory structure
+
 
 
 (in my case: `cp -rv  ~/dockerprojecten/hsn-links-import/ingest_cbgxml/dataxml/  ./dataxml`
@@ -28,7 +29,7 @@ Make a note of the directories.
 ## environmental variables
 
 
-These are the (development) defaults. 
+These are the  defaults. 
 See the Dockerfile in ingest_cbgxml
 
 

@@ -1,7 +1,7 @@
 *ingest*.sh
 bin/*
 lib/*
-import*
+import/
 *.xml
 limesurvey*
 *.ogg
