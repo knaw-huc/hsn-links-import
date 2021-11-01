@@ -1,0 +1,27 @@
+DROP TABLE IF EXISTS `registration_c`;
+CREATE TABLE `registration_c` (
+  `id_registration` int(10) unsigned NOT NULL,
+  `id_source` int(10) unsigned DEFAULT NULL,
+  `id_persist_source` int(10) unsigned DEFAULT NULL,
+  `id_persist_registration` varchar(80) COLLATE utf8_bin DEFAULT NULL,
+  `source_digital_original` varchar(256) COLLATE utf8_bin DEFAULT NULL,
+  `id_orig_registration` int(11) DEFAULT NULL,
+  `registration_maintype` tinyint(3) unsigned DEFAULT NULL,
+  `registration_type` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `extract` varchar(10) COLLATE utf8_bin DEFAULT NULL,
+  `registration_location_no` int(10) unsigned DEFAULT NULL,
+  `registration_church` varchar(45) COLLATE utf8_bin DEFAULT NULL,
+  `registration_date` varchar(20) COLLATE utf8_bin DEFAULT NULL,
+  `registration_day` tinyint(3) unsigned DEFAULT NULL,
+  `registration_month` tinyint(3) unsigned DEFAULT NULL,
+  `registration_year` smallint(5) unsigned DEFAULT NULL,
+  `registration_seq` varchar(60) COLLATE utf8_bin DEFAULT NULL,
+  `remarks` varchar(500) COLLATE utf8_bin DEFAULT NULL,
+  `registration_days` int(10) unsigned DEFAULT NULL,
+  `registration_flag` tinyint(3) DEFAULT NULL,
+  `not_linksbase` varchar(10) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id_registration`),
+  KEY `id_source` (`id_source`),
+  KEY `registration_maintype` (`registration_maintype`),
+  KEY `registration_type` (`registration_type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
