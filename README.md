@@ -7,6 +7,7 @@ Status: "finished"
 ## pull image
 
     docker pull mvdpeetje/hsnl_ingester
+    docker pull registry.diginfra.net/tsd/links-ingester:latest
 
 ## obtain data
 

@@ -19,7 +19,7 @@ RUN cpanm DBI
 # necessary for mysql
 # https://stackoverflow.com/questions/4729722/trying-to-install-perl-mysql-dbd-mysql-config-cant-be-found
 RUN apt-get install -y libmariadb-dev-compat
-RUN cpanm DBD::mysql
+RUN cpanm DBD::mysql@4.052
 
 RUN apt-get install -y expat 
 RUN apt-get install -y libxml-parser-perl

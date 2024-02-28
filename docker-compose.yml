@@ -17,20 +17,20 @@ services:
        
 
     mysqldb:
-        image: mysql:5.7.35
+        image: mariadb
         volumes: 
             - mysqlvol:/var/lib/mysql
         ports:
-            - 3306:3306            
+            - 3306:3306
         environment:
             TZ: "Europe/Amsterdam"
             MYSQL_ROOT_PASSWORD: "rood"
             MYSQL_DATABASE: "links_general"
-            
+
     adminer:
         image: adminer
         ports:
-            - 8080:8080            
-      
+            - 8080:8080
+
 volumes:
-    mysqlvol:                      
+    mysqlvol:

@@ -30,9 +30,9 @@ do
     filename=ingest-$collectionName-$datum.sh
     # echo $filename
     sh ./$filename
-    /usr/src/app/a2a_to_original.py
-
 done
+
+/usr/src/app/a2a_to_original.py
 
 echo -e "SUMMARY\nThese collections where handled: \n"
 # echo ${collections[*]}
