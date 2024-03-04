@@ -24,9 +24,11 @@ fi
 only_first_run=''
 for collectionName in "${collections[@]}"
 do
-    if [ "$only_first_run" ]; then
-      export CLEAN_BEFORE=1
+    if [[] -z "$only_first_run" ]]; then
+      export CLEAN_BEFORE='0'
       only_first_run='done'
+    else
+      export CLEAN_BEFORE='0'
     fi
 
     export COLLECTION=$collectionName
