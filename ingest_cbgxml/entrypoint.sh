@@ -21,8 +21,14 @@ if [ ${#collections[@]} -eq 0 ]; then
     exit 3
 fi
 
+only_first_run=''
 for collectionName in "${collections[@]}"
 do
+    if [ "$only_first_run" ]; then
+      export CLEAN_BEFORE=1
+      only_first_run='done'
+    fi
+
     export COLLECTION=$collectionName
     /usr/src/app/mk_ingest_cbgxml.py
 

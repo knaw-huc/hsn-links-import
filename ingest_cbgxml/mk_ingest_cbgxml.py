@@ -37,7 +37,7 @@ from a2a_xml import split_xml_fname, get_id_source_from_archive
 debug = False
 
 
-def process_xml( db_ref, host_links, user_links, passwd_links, a2aperl_dir, cbgxml_dir, cbgxml_list, cbgxml_skip ):
+def process_xml( db_ref, host_links, user_links, passwd_links, a2aperl_dir, cbgxml_dir, cbgxml_list, cbgxml_skip, cbgxml_clean_before ):
 	print( "process_xml()" )
 	print( "cbgxml_dir:  %s" % cbgxml_dir )
 	print( "cbgxml_list: %s" % cbgxml_list )
@@ -131,7 +131,7 @@ def process_xml( db_ref, host_links, user_links, passwd_links, a2aperl_dir, cbgx
 					nskipped += 1
 					continue
 			
-			if naccept == 0:
+			if cbgxml_clean_before and naccept == 0:
 				truncate = 1	# truncate a2a tables
 			else:
 				truncate = 0	# append to a2a tables
@@ -230,9 +230,10 @@ if __name__ == "__main__":
 	# CBGXML_COLLECTION = config_local.get( "CBGXML_COLLECTION", "BSH" ) # only the BSG files, in import/source/BSG-2021, default was ""
 	# CBGXML_COLLECTION = config_local.get( "CBGXML_COLLECTION", "BSO" ) # only the BSG files, in import/source/BSG-2021, default was ""
 	CBGXML_COLLECTION = config_local.get( "CBGXML_COLLECTION", os.environ["COLLECTION"]) # only the BSG files, in import/source/BSG-2021, default was ""
-
+	CBGXML_CLEAN_BEFORE = config_local.get( "CBGXML_CLEAN_BEFORE", os.environ["CLEAN_BEFORE"]) == '1'
 
 	print( "CBGXML_COLLECTION: %s" % CBGXML_COLLECTION )
+	print( "CBGXML_CLEAN_BEFORE: %s" % CBGXML_CLEAN_BEFORE )
 	
 	CBGXML_DIR_  = "CBGXML_%s_DIR"  % CBGXML_COLLECTION
 	CBGXML_LIST_ = "CBGXML_%s_LIST" % CBGXML_COLLECTION
@@ -277,6 +278,6 @@ if __name__ == "__main__":
 	print( "Connecting to database at %s" % HOST_REF )
 	db_ref = Database( host = HOST_REF,   user = USER_REF,   passwd = PASSWD_REF,   dbname = DBNAME_REF )
 	
-	process_xml( db_ref, HOST_LINKS, USER_LINKS, PASSWD_LINKS, A2APERL_DIR, CBGXML_DIR, CBGXML_LIST, CBGXML_SKIP )
+	process_xml( db_ref, HOST_LINKS, USER_LINKS, PASSWD_LINKS, A2APERL_DIR, CBGXML_DIR, CBGXML_LIST, CBGXML_SKIP, CBGXML_CLEAN_BEFORE )
 
 # [eof]
