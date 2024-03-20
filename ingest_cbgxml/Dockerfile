@@ -39,11 +39,9 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 # dbcredentials result database
-
 ENV MYSQL_LINKS_HOSTURL mysqldb
 ENV MYSQL_LINKS_USERNAME root
 ENV MYSQL_LINKS_PASSWORD rood
-ENV DBNAME_LINKS links_cleaned
 
 # reference db docker
 ENV MYSQL_REF_HOSTURL mysqldb
@@ -58,7 +56,8 @@ ENV CBGXML_BSO_DIR  ./dataxml/BSO
 
 # for the script (s)
 ENV INTERACTION no
-ENV LOGGIE	no
+ENV LOGGIE no
+ENV CLEAN_BEFORE 1
 
 COPY . .
 

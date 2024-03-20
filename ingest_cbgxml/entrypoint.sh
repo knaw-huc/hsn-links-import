@@ -21,16 +21,8 @@ if [ ${#collections[@]} -eq 0 ]; then
     exit 3
 fi
 
-only_first_run=''
 for collectionName in "${collections[@]}"
 do
-    if [[] -z "$only_first_run" ]]; then
-      export CLEAN_BEFORE='0'
-      only_first_run='done'
-    else
-      export CLEAN_BEFORE='0'
-    fi
-
     export COLLECTION=$collectionName
     /usr/src/app/mk_ingest_cbgxml.py
 
@@ -38,6 +30,8 @@ do
     filename=ingest-$collectionName-$datum.sh
     # echo $filename
     sh ./$filename
+
+    export CLEAN_BEFORE='0'
 done
 
 /usr/src/app/a2a_to_original.py

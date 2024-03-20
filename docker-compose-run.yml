@@ -7,7 +7,6 @@ services:
              MYSQL_LINKS_HOSTURL: host.docker.internal
              MYSQL_LINKS_USERNAME: links
              MYSQL_LINKS_PASSWORD: mslinks
-             DBNAME_LINKS: links_cleaned
              MYSQL_REF_HOSTURL: host.docker.internal
              MYSQL_REF_USERNAME: links
              MYSQL_REF_PASSWORD: mslinks

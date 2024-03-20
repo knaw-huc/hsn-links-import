@@ -6,7 +6,6 @@
 HOST_LINKS : "mysqldb"
 USER_LINKS : "root"
 PASSWD_LINKS : "rood"
-DBNAME_LINKS  : links_cleaned
 
 
 # reference db docker
